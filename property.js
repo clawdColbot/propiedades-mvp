@@ -9,6 +9,7 @@ const propiedadesDB = [
         metros: 210,
         tipo: "casa",
         direccion: "El Poblado, Medellín",
+        coordenadas: { lat: 6.2088, lng: -75.5677 },
         imagen: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop",
         imagenes: [
             "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&h=800&fit=crop",
@@ -33,6 +34,7 @@ const propiedadesDB = [
         metros: 145,
         tipo: "apartamento",
         direccion: "Castropol, Medellín",
+        coordenadas: { lat: 6.2054, lng: -75.5631 },
         imagen: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop",
         imagenes: [
             "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&h=800&fit=crop",
@@ -56,6 +58,7 @@ const propiedadesDB = [
         metros: 165,
         tipo: "casa",
         direccion: "Envigado, Antioquia",
+        coordenadas: { lat: 6.1743, lng: -75.5889 },
         imagen: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop",
         imagenes: [
             "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=800&fit=crop",
@@ -79,6 +82,7 @@ const propiedadesDB = [
         metros: 280,
         tipo: "apartamento",
         direccion: "Las Palmas, Medellín",
+        coordenadas: { lat: 6.2208, lng: -75.5742 },
         imagen: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop",
         imagenes: [
             "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&h=800&fit=crop",
@@ -104,6 +108,7 @@ const propiedadesDB = [
         metros: 95,
         tipo: "casa",
         direccion: "Santa Elena, Medellín",
+        coordenadas: { lat: 6.2106, lng: -75.4953 },
         imagen: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop",
         imagenes: [
             "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&h=800&fit=crop",
@@ -127,6 +132,7 @@ const propiedadesDB = [
         metros: 110,
         tipo: "apartamento",
         direccion: "Laureles, Medellín",
+        coordenadas: { lat: 6.2452, lng: -75.5917 },
         imagen: "https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=800&h=600&fit=crop",
         imagenes: [
             "https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=1200&h=800&fit=crop",
@@ -284,9 +290,28 @@ function renderPropertyDetail() {
                     <div class="location-section">
                         <h2>Ubicación</h2>
                         <p>📍 ${prop.direccion}</p>
-                        <div class="location-map-placeholder">
-                            <span>🗺️ Mapa de ubicación</span>
-                            <p>Ver ubicación exacta contactando al agente</p>
+                        <div class="google-map-container">
+                            <iframe 
+                                width="100%" 
+                                height="400" 
+                                style="border:0; border-radius: 12px;" 
+                                loading="lazy" 
+                                allowfullscreen 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15865.~ !3d${prop.coordenadas.lat}!4d${prop.coordenadas.lng}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTInMzEuNyJOIDc1wrAzNCcwMy43Ilc!5e0!3m2!1ses!2sco!4v1706680000000!5m2!1ses!2sco">
+                            </iframe>
+                        </div>
+                        <div class="map-actions">
+                            <a href="https://www.google.com/maps/search/?api=1&query=${prop.coordenadas.lat},${prop.coordenadas.lng}" 
+                               target="_blank" 
+                               class="btn btn-outline">
+                                📍 Ver en Google Maps
+                            </a>
+                            <a href="https://www.waze.com/ul?ll=${prop.coordenadas.lat},${prop.coordenadas.lng}&navigate=yes" 
+                               target="_blank" 
+                               class="btn btn-outline">
+                               🚗 Abrir en Waze
+                            </a>
                         </div>
                     </div>
                 </div>
