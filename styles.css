@@ -581,6 +581,310 @@ body {
     font-size: 14px;
 }
 
+/* Modal */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    backdrop-filter: blur(4px);
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal {
+    background: white;
+    border-radius: var(--radius-lg);
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalSlide 0.3s ease;
+}
+
+@keyframes modalSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    background: var(--bg-light);
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-close:hover {
+    background: var(--border);
+}
+
+/* Property Detail */
+.property-detail {
+    padding: 0;
+}
+
+.detail-image {
+    position: relative;
+    height: 300px;
+}
+
+.detail-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.detail-info {
+    padding: 32px;
+}
+
+.detail-info h2 {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.detail-price {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.detail-address {
+    color: var(--text-light);
+    font-size: 16px;
+    margin-bottom: 24px;
+}
+
+.detail-features {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+    padding: 16px;
+    background: var(--bg-light);
+    border-radius: var(--radius);
+}
+
+.detail-features span {
+    font-size: 15px;
+}
+
+.detail-description {
+    margin-bottom: 24px;
+}
+
+.detail-description h4 {
+    margin-bottom: 8px;
+}
+
+.detail-agent {
+    background: var(--bg-light);
+    padding: 20px;
+    border-radius: var(--radius);
+    margin-bottom: 24px;
+}
+
+.detail-agent h4 {
+    margin-bottom: 12px;
+}
+
+.detail-actions {
+    display: flex;
+    gap: 12px;
+}
+
+/* Forms */
+.auth-form,
+.publish-form {
+    padding: 40px;
+}
+
+.auth-form h2,
+.publish-form h2 {
+    margin-bottom: 8px;
+}
+
+.auth-form > p,
+.publish-form > p {
+    color: var(--text-light);
+    margin-bottom: 24px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 15px;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(0,106,255,0.1);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-row .form-group {
+    margin-bottom: 16px;
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.form-footer a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Resultados count */
+.resultados-count {
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+/* Coming Soon */
+.coming-soon {
+    background: var(--bg-light);
+    border-radius: var(--radius-lg);
+    padding: 60px;
+}
+
+/* Toast Notifications */
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    background: white;
+    padding: 16px 24px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    font-size: 14px;
+    font-weight: 500;
+    transform: translateX(400px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    min-width: 250px;
+}
+
+.toast.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.toast-success {
+    border-left: 4px solid var(--success);
+}
+
+.toast-info {
+    border-left: 4px solid var(--primary);
+}
+
+/* Agents List */
+.agents-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 0 40px 40px;
+}
+
+.agent-card {
+    text-align: center;
+    padding: 24px;
+    background: var(--bg-light);
+    border-radius: var(--radius);
+}
+
+.agent-avatar {
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+.agent-card h4 {
+    margin-bottom: 4px;
+}
+
+.agent-card p {
+    color: var(--text-light);
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+/* Property favorite active */
+.property-favorite.active {
+    color: #ef4444;
+}
+
+.property-favorite.active svg {
+    fill: currentColor;
+}
+
+/* No more results */
+.no-more-results {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-light);
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
     .search-inputs {
@@ -667,5 +971,61 @@ body {
     .search-box {
         padding: 16px;
         margin: 0 -12px;
+    }
+    
+    /* Responsive modals */
+    .modal {
+        max-height: 95vh;
+        margin: 10px;
+    }
+    
+    .detail-image {
+        height: 200px;
+    }
+    
+    .detail-info {
+        padding: 20px;
+    }
+    
+    .detail-info h2 {
+        font-size: 22px;
+    }
+    
+    .detail-price {
+        font-size: 24px;
+    }
+    
+    .detail-features {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    
+    .detail-actions {
+        flex-direction: column;
+    }
+    
+    .auth-form,
+    .publish-form {
+        padding: 24px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .agents-grid {
+        grid-template-columns: 1fr;
+        padding: 0 20px 20px;
+    }
+    
+    .toast-container {
+        left: 20px;
+        right: 20px;
+        top: auto;
+        bottom: 20px;
+    }
+    
+    .toast {
+        min-width: auto;
     }
 }

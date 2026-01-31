@@ -3,44 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Propiedades - Encuentra tu hogar ideal</title>
-    <link rel="stylesheet" href="styles.css?v=2">
+    <title>Propiedades - Encuentra tu hogar ideal en Medellín</title>
+    <link rel="stylesheet" href="styles.css?v=3">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <div class="nav-brand">
+            <a href="index.html" class="nav-brand">
                 <svg class="logo" viewBox="0 0 40 40" fill="none">
                     <rect width="40" height="40" rx="8" fill="#006AFF"/>
                     <path d="M20 10L28 16V28H22V22H18V28H12V16L20 10Z" fill="white"/>
                 </svg>
                 <span class="brand-name">Propiedades</span>
-            </div>
+            </a>
             <nav class="nav-menu">
-                <a href="#comprar" class="nav-link active">Comprar</a>
-                <a href="#alquilar" class="nav-link">Alquilar</a>
-                <a href="#vender" class="nav-link">Vender</a>
-                <a href="#agentes" class="nav-link">Agentes</a>
+                <a href="index.html" class="nav-link active">Comprar</a>
+                <a href="#propiedades" class="nav-link">Propiedades</a>
+                <a href="#vender" class="nav-link" onclick="mostrarVender(event)">Vender</a>
+                <a href="#agentes" class="nav-link" onclick="mostrarAgentes(event)">Agentes</a>
             </nav>
             <div class="nav-actions">
-                <button class="btn btn-ghost">Iniciar sesión</button>
-                <button class="btn btn-primary">Publicar propiedad</button>
+                <button class="btn btn-ghost" onclick="mostrarLogin()">Iniciar sesión</button>
+                <button class="btn btn-primary" onclick="mostrarPublicar()">Publicar propiedad</button>
             </div>
         </div>
     </header>
 
     <!-- Hero Search -->
-    <section class="hero">
+    <section class="hero" id="inicio">
         <div class="hero-content">
-            <h1 class="hero-title">Encuentra tu hogar ideal</h1>
-            <p class="hero-subtitle">Miles de propiedades en venta te esperan</p>
+            <h1 class="hero-title">Encuentra tu hogar ideal en Medellín</h1>
+            <p class="hero-subtitle">Miles de propiedades en venta te esperan en la ciudad de la eterna primavera</p>
             
             <div class="search-box">
                 <div class="search-tabs">
-                    <button class="tab active" data-tab="venta">Venta</button>
-                    <button class="tab" data-tab="alquiler">Alquiler</button>
+                    <button class="tab active" data-tab="venta" onclick="cambiarTab('venta')">Venta</button>
+                    <button class="tab" data-tab="alquiler" onclick="cambiarTab('alquiler')">Alquiler</button>
                 </div>
                 <div class="search-inputs">
                     <div class="input-group">
@@ -48,10 +48,10 @@
                             <circle cx="11" cy="11" r="8"/>
                             <path d="M21 21l-4.35-4.35"/>
                         </svg>
-                        <input type="text" id="searchInput" placeholder="Barrio en Medellín...">
+                        <input type="text" id="searchInput" placeholder="Barrio en Medellín..." onkeypress="if(event.key==='Enter')buscarPropiedades()">
                     </div>
                     <div class="input-group">
-                        <select id="tipoPropiedad">
+                        <select id="tipoPropiedad" onchange="buscarPropiedades()">
                             <option value="">Tipo de propiedad</option>
                             <option value="casa">Casa</option>
                             <option value="apartamento">Apartamento</option>
@@ -60,7 +60,7 @@
                         </select>
                     </div>
                     <div class="input-group">
-                        <select id="precioMax">
+                        <select id="precioMax" onchange="buscarPropiedades()">
                             <option value="">Precio máx.</option>
                             <option value="500000000">$500M</option>
                             <option value="1000000000">$1.000M</option>
@@ -100,33 +100,37 @@
     </section>
 
     <!-- Featured Properties -->
-    <section class="properties-section">
+    <section class="properties-section" id="propiedades">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Propiedades destacadas</h2>
-                <a href="#" class="view-all">Ver todas →</a>
+                <h2 class="section-title" id="tituloResultados">Propiedades destacadas</h2>
+                <span class="resultados-count" id="resultadosCount"></span>
             </div>
             
             <div class="filters-bar">
-                <button class="filter-chip active">Todas</button>
-                <button class="filter-chip">Casas</button>
-                <button class="filter-chip">Apartamentos</button>
-                <button class="filter-chip">Nuevas</button>
-                <button class="filter-chip">Con descuento</button>
+                <button class="filter-chip active" onclick="filtrarPor('todas')">Todas</button>
+                <button class="filter-chip" onclick="filtrarPor('casa')">Casas</button>
+                <button class="filter-chip" onclick="filtrarPor('apartamento')">Apartamentos</button>
+                <button class="filter-chip" onclick="filtrarPor('nueva')">Nuevas</button>
+                <button class="filter-chip" onclick="filtrarPor('descuento')">Con descuento</button>
             </div>
 
             <div class="properties-grid" id="propertiesGrid">
                 <!-- Las propiedades se cargan dinámicamente -->
             </div>
 
-            <div class="load-more">
-                <button class="btn btn-outline">Cargar más propiedades</button>
+            <div class="load-more" id="loadMoreContainer">
+                <button class="btn btn-outline" onclick="cargarMas()">Cargar más propiedades</button>
+            </div>
+            
+            <div class="no-more-results" id="noMoreResults" style="display: none;">
+                <p>No hay más propiedades para mostrar</p>
             </div>
         </div>
     </section>
 
     <!-- Features -->
-    <section class="features">
+    <section class="features" id="features">
         <div class="container">
             <h2 class="section-title center">¿Por qué elegirnos?</h2>
             <div class="features-grid">
@@ -155,12 +159,12 @@
     </section>
 
     <!-- CTA -->
-    <section class="cta-section">
+    <section class="cta-section" id="vender">
         <div class="container">
             <div class="cta-content">
                 <h2>¿Quieres vender tu propiedad?</h2>
-                <p>Publica gratis y llega a miles de compradores potenciales</p>
-                <button class="btn btn-primary btn-large">Publicar ahora</button>
+                <p>Publica gratis y llega a miles de compradores potenciales en Medellín</p>
+                <button class="btn btn-primary btn-large" onclick="mostrarPublicar()">Publicar ahora</button>
             </div>
         </div>
     </section>
@@ -170,43 +174,56 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <div class="nav-brand">
+                    <a href="index.html" class="nav-brand">
                         <svg class="logo" viewBox="0 0 40 40" fill="none">
                             <rect width="40" height="40" rx="8" fill="#006AFF"/>
                             <path d="M20 10L28 16V28H22V22H18V28H12V16L20 10Z" fill="white"/>
                         </svg>
                         <span class="brand-name">Propiedades</span>
-                    </div>
-                    <p class="footer-description">La forma más fácil de encontrar y vender propiedades.</p>
+                    </a>
+                    <p class="footer-description">La forma más fácil de encontrar y vender propiedades en Medellín y el Área Metropolitana.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Comprar</h4>
-                    <a href="#">Casas en venta</a>
-                    <a href="#">Apartamentos</a>
-                    <a href="#">Nuevas construcciones</a>
-                    <a href="#">Remates</a>
+                    <a href="#propiedades" onclick="filtrarPor('casa'); return false;">Casas en venta</a>
+                    <a href="#propiedades" onclick="filtrarPor('apartamento'); return false;">Apartamentos</a>
+                    <a href="#propiedades" onclick="filtrarPor('nueva'); return false;">Nuevas construcciones</a>
+                    <a href="#" onclick="mostrarProximamente(event)">Remates</a>
                 </div>
                 <div class="footer-links">
                     <h4>Vender</h4>
-                    <a href="#">Publicar propiedad</a>
-                    <a href="#">Valorar mi casa</a>
-                    <a href="#">Consejos para vender</a>
-                    <a href="#">Agentes</a>
+                    <a href="#" onclick="mostrarPublicar(); return false;">Publicar propiedad</a>
+                    <a href="#" onclick="mostrarProximamente(event)">Valorar mi casa</a>
+                    <a href="#" onclick="mostrarProximamente(event)">Consejos para vender</a>
+                    <a href="#" onclick="mostrarAgentes(event)">Agentes</a>
                 </div>
                 <div class="footer-links">
                     <h4>Contacto</h4>
-                    <a href="#">Ayuda</a>
-                    <a href="#">Sobre nosotros</a>
-                    <a href="#">Prensa</a>
-                    <a href="#">Trabaja con nosotros</a>
+                    <a href="#" onclick="mostrarProximamente(event)">Ayuda</a>
+                    <a href="#" onclick="mostrarProximamente(event)">Sobre nosotros</a>
+                    <a href="#" onclick="mostrarProximamente(event)">Prensa</a>
+                    <a href="#" onclick="mostrarProximamente(event)">Trabaja con nosotros</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Propiedades. Todos los derechos reservados.</p>
+                <p>&copy; 2026 Propiedades Medellín. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <script src="app.js?v=2"></script>
+    <!-- Modales -->
+    <div class="modal-overlay" id="modalOverlay" onclick="cerrarModal(event)">
+        <div class="modal" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="cerrarModal()">&times;</button>
+            <div class="modal-content" id="modalContent">
+                <!-- Contenido dinámico -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="app.js?v=3"></script>
 </body>
 </html>
