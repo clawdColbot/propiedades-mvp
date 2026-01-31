@@ -1,14 +1,14 @@
-// Datos de ejemplo de propiedades
+// Datos de ejemplo de propiedades - Medellín, Colombia
 const propiedades = [
     {
         id: 1,
         titulo: "Moderna casa familiar con jardín",
-        precio: 285000,
+        precio: 850000000,
         habitaciones: 4,
         banos: 3,
         metros: 210,
         tipo: "casa",
-        direccion: "Barrio Los Robles, Ciudad de México",
+        direccion: "El Poblado, Medellín",
         imagen: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop",
         estado: "nueva",
         fecha: "Hace 2 días"
@@ -16,25 +16,25 @@ const propiedades = [
     {
         id: 2,
         titulo: "Lujoso apartamento en zona exclusiva",
-        precio: 420000,
+        precio: 1200000000,
         habitaciones: 3,
         banos: 2,
         metros: 145,
         tipo: "apartamento",
-        direccion: "Polanco, Ciudad de México",
+        direccion: "Castropol, Medellín",
         imagen: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop",
         estado: "destacada",
         fecha: "Hace 5 horas"
     },
     {
         id: 3,
-        titulo: "Casa minimalista con alberca",
-        precio: 195000,
+        titulo: "Casa minimalista con piscina",
+        precio: 650000000,
         habitaciones: 3,
         banos: 2,
         metros: 165,
         tipo: "casa",
-        direccion: "Zapopan, Jalisco",
+        direccion: "Envigado, Antioquia",
         imagen: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop",
         estado: "",
         fecha: "Hace 1 día"
@@ -42,43 +42,52 @@ const propiedades = [
     {
         id: 4,
         titulo: "Penthouse con vista panorámica",
-        precio: 680000,
+        precio: 2100000000,
         habitaciones: 4,
         banos: 4,
         metros: 280,
         tipo: "apartamento",
-        direccion: "Santa Fe, Ciudad de México",
+        direccion: "Las Palmas, Medellín",
         imagen: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop",
         estado: "destacada",
         fecha: "Hace 3 días"
     },
     {
         id: 5,
-        titulo: "Acogedora casa de campo",
-        precio: 145000,
+        titulo: "Acogedora casa campestre",
+        precio: 480000000,
         habitaciones: 2,
         banos: 1,
         metros: 95,
         tipo: "casa",
-        direccion: "Valle de Bravo, Estado de México",
+        direccion: "Santa Elena, Medellín",
         imagen: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop",
         estado: "nueva",
         fecha: "Hace 6 horas"
     },
     {
         id: 6,
-        titulo: "Departamento cerca del mar",
-        precio: 320000,
+        titulo: "Apartamento con vista a la ciudad",
+        precio: 920000000,
         habitaciones: 2,
         banos: 2,
         metros: 110,
         tipo: "apartamento",
-        direccion: "Playa del Carmen, Quintana Roo",
+        direccion: "Laureles, Medellín",
         imagen: "https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=800&h=600&fit=crop",
         estado: "",
         fecha: "Hace 4 días"
     }
 ];
+
+// Formatear precio en pesos colombianos
+function formatPrecioCOP(precio) {
+    // Formato: $850.000.000 (sin decimales, con puntos de miles)
+    return '$' + precio.toLocaleString('es-CO', {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    });
+}
 
 // Inicializar la aplicación
 document.addEventListener('DOMContentLoaded', () => {
@@ -112,7 +121,7 @@ function renderizarPropiedades(props) {
                 </button>
             </div>
             <div class="property-info">
-                <div class="property-price">$${prop.precio.toLocaleString()}</div>
+                <div class="property-price">${formatPrecioCOP(prop.precio)}</div>
                 <div class="property-details">
                     <span>🛏️ ${prop.habitaciones}</span>
                     <span>🚿 ${prop.banos}</span>
@@ -150,7 +159,7 @@ function inicializarFiltros() {
             } else if (filtro === 'nuevas') {
                 filtradas = propiedades.filter(p => p.estado === 'nueva');
             } else if (filtro === 'con descuento') {
-                filtradas = propiedades.filter(p => p.precio < 200000);
+                filtradas = propiedades.filter(p => p.precio < 600000000);
             }
             
             renderizarPropiedades(filtradas);
@@ -205,7 +214,7 @@ function buscarPropiedades() {
 // Ver detalle de propiedad
 function verDetalle(id) {
     const prop = propiedades.find(p => p.id === id);
-    alert(`Detalle de propiedad: ${prop.titulo}\n\nPrecio: $${prop.precio.toLocaleString()}\nDirección: ${prop.direccion}\n\nEn el MVP completo, esto abriría una página de detalle.`);
+    alert(`Detalle de propiedad: ${prop.titulo}\n\nPrecio: ${formatPrecioCOP(prop.precio)}\nDirección: ${prop.direccion}\n\nEn el MVP completo, esto abriría una página de detalle.`);
 }
 
 // Toggle favorito
