@@ -21,9 +21,9 @@ const propiedadesDB = [
         estado: "nueva",
         fecha: "Hace 2 días",
         descripcion: "Hermosa casa familiar con amplio jardín, perfecta para familias grandes. Cerca de colegios y centros comerciales. Cuenta con espacios amplios, iluminación natural y acabados de alta calidad. La casa cuenta con 4 habitaciones amplias, 3 baños completos, sala comedor integrado, cocina moderna con isla, zona de lavandería independiente y un hermoso jardín trasero ideal para reuniones familiares.",
-        agente: "Carlos Martínez",
-        telefono: "+57 300 123 4567",
-        email: "carlos@propiedades.com"
+        agente: "Gloria Carvajal",
+        telefono: "+573016261493",
+        email: "gloria@propiedades.com"
     },
     {
         id: 2,
@@ -45,9 +45,9 @@ const propiedadesDB = [
         estado: "destacada",
         fecha: "Hace 5 horas",
         descripcion: "Apartamento de lujo con vista panorámica a la ciudad. Acabados de alta calidad y amenities premium. Cocina integral, walk-in closet y balcón privado. El edificio cuenta con gimnasio, piscina, sauna y zona de BBQ.",
-        agente: "María González",
-        telefono: "+57 310 234 5678",
-        email: "maria@propiedades.com"
+        agente: "Gloria Carvajal",
+        telefono: "+573016261493",
+        email: "gloria@propiedades.com"
     },
     {
         id: 3,
@@ -69,9 +69,9 @@ const propiedadesDB = [
         estado: "",
         fecha: "Hace 1 día",
         descripcion: "Diseño minimalista con piscina privada. Ideal para quienes buscan tranquilidad cerca de la ciudad. Jardín zen y área de BBQ. La casa tiene amplios ventanales que permiten la entrada de luz natural durante todo el día.",
-        agente: "Andrés López",
-        telefono: "+57 320 345 6789",
-        email: "andres@propiedades.com"
+        agente: "Gloria Carvajal",
+        telefono: "+573016261493",
+        email: "gloria@propiedades.com"
     },
     {
         id: 4,
@@ -95,9 +95,9 @@ const propiedadesDB = [
         estado: "destacada",
         fecha: "Hace 3 días",
         descripcion: "Espectacular penthouse con 360° de vista. Terraza privada, jacuzzi y acabados de lujo. El apartamento más exclusivo de la ciudad. Incluye 2 parqueaderos privados, cuarto de servicio con baño y bodega.",
-        agente: "Laura Rodríguez",
-        telefono: "+57 315 456 7890",
-        email: "laura@propiedades.com"
+        agente: "Gloria Carvajal",
+        telefono: "+573016261493",
+        email: "gloria@propiedades.com"
     },
     {
         id: 5,
@@ -119,9 +119,9 @@ const propiedadesDB = [
         estado: "nueva",
         fecha: "Hace 6 horas",
         descripcion: "Casa campestre con ambiente familiar. Perfecta para fines de semana o vivir rodeado de naturaleza. Huerta orgánica y zona de fogata. A solo 30 minutos del centro de Medellín.",
-        agente: "Pedro Sánchez",
-        telefono: "+57 318 567 8901",
-        email: "pedro@propiedades.com"
+        agente: "Gloria Carvajal",
+        telefono: "+573016261493",
+        email: "gloria@propiedades.com"
     },
     {
         id: 6,
@@ -143,9 +143,9 @@ const propiedadesDB = [
         estado: "",
         fecha: "Hace 4 días",
         descripcion: "Moderno apartamento en zona exclusiva de Laureles. Cerca de restaurantes y parques. Perfecto para parejas jóvenes. El edificio tiene terraza común y zona de coworking.",
-        agente: "Ana María Jiménez",
-        telefono: "+57 319 678 9012",
-        email: "ana@propiedades.com"
+        agente: "Gloria Carvajal",
+        telefono: "+573016261493",
+        email: "gloria@propiedades.com"
     }
 ];
 
