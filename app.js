@@ -10,9 +10,16 @@ const propiedadesDB = [
         tipo: "casa",
         direccion: "El Poblado, Medellín",
         imagen: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop",
+        imagenes: [
+            "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&h=800&fit=crop",
+            "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&h=800&fit=crop",
+            "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1200&h=800&fit=crop",
+            "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&h=800&fit=crop",
+            "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&h=800&fit=crop"
+        ],
         estado: "nueva",
         fecha: "Hace 2 días",
-        descripcion: "Hermosa casa familiar con amplio jardín, perfecta para familias grandes. Cerca de colegios y centros comerciales.",
+        descripcion: "Hermosa casa familiar con amplio jardín, perfecta para familias grandes. Cerca de colegios y centros comerciales. Cuenta con espacios amplios, iluminación natural y acabados de alta calidad.",
         agente: "Carlos Martínez",
         telefono: "+57 300 123 4567",
         email: "carlos@propiedades.com"
@@ -27,9 +34,15 @@ const propiedadesDB = [
         tipo: "apartamento",
         direccion: "Castropol, Medellín",
         imagen: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop",
+        imagenes: [
+            "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&h=800&fit=crop",
+            "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&h=800&fit=crop",
+            "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&h=800&fit=crop",
+            "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1200&h=800&fit=crop"
+        ],
         estado: "destacada",
         fecha: "Hace 5 horas",
-        descripcion: "Apartamento de lujo con vista panorámica a la ciudad. Acabados de alta calidad y amenities premium.",
+        descripcion: "Apartamento de lujo con vista panorámica a la ciudad. Acabados de alta calidad y amenities premium. Cocina integral, walk-in closet y balcón privado.",
         agente: "María González",
         telefono: "+57 310 234 5678",
         email: "maria@propiedades.com"
@@ -44,9 +57,15 @@ const propiedadesDB = [
         tipo: "casa",
         direccion: "Envigado, Antioquia",
         imagen: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop",
+        imagenes: [
+            "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=800&fit=crop",
+            "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=1200&h=800&fit=crop",
+            "https://images.unsplash.com/photo-1572331165267-854da2b00df6?w=1200&h=800&fit=crop",
+            "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=800&fit=crop"
+        ],
         estado: "",
         fecha: "Hace 1 día",
-        descripcion: "Diseño minimalista con piscina privada. Ideal para quienes buscan tranquilidad cerca de la ciudad.",
+        descripcion: "Diseño minimalista con piscina privada. Ideal para quienes buscan tranquilidad cerca de la ciudad. Jardín zen y área de BBQ.",
         agente: "Andrés López",
         telefono: "+57 320 345 6789",
         email: "andres@propiedades.com"
@@ -61,9 +80,17 @@ const propiedadesDB = [
         tipo: "apartamento",
         direccion: "Las Palmas, Medellín",
         imagen: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop",
+        imagenes: [
+            "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&h=800&fit=crop",
+            "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&h=800&fit=crop",
+            "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1200&h=800&fit=crop",
+            "https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=1200&h=800&fit=crop",
+            "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200&h=800&fit=crop",
+            "https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=1200&h=800&fit=crop"
+        ],
         estado: "destacada",
         fecha: "Hace 3 días",
-        descripcion: "Espectacular penthouse con 360° de vista. Terraza privada, jacuzzi y acabados de lujo.",
+        descripcion: "Espectacular penthouse con 360° de vista. Terraza privada, jacuzzi y acabados de lujo. El apartamento más exclusivo de la ciudad.",
         agente: "Laura Rodríguez",
         telefono: "+57 315 456 7890",
         email: "laura@propiedades.com"
@@ -78,9 +105,15 @@ const propiedadesDB = [
         tipo: "casa",
         direccion: "Santa Elena, Medellín",
         imagen: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop",
+        imagenes: [
+            "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&h=800&fit=crop",
+            "https://images.unsplash.com/photo-1449844908441-8829872d2607?w=1200&h=800&fit=crop",
+            "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1200&h=800&fit=crop",
+            "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?w=1200&h=800&fit=crop"
+        ],
         estado: "nueva",
         fecha: "Hace 6 horas",
-        descripcion: "Casa campestre con ambiente familiar. Perfecta para fines de semana o vivir rodeado de naturaleza.",
+        descripcion: "Casa campestre con ambiente familiar. Perfecta para fines de semana o vivir rodeado de naturaleza. Huerta orgánica y zona de fogata.",
         agente: "Pedro Sánchez",
         telefono: "+57 318 567 8901",
         email: "pedro@propiedades.com"
@@ -95,9 +128,15 @@ const propiedadesDB = [
         tipo: "apartamento",
         direccion: "Laureles, Medellín",
         imagen: "https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=800&h=600&fit=crop",
+        imagenes: [
+            "https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=1200&h=800&fit=crop",
+            "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=1200&h=800&fit=crop",
+            "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&h=800&fit=crop",
+            "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=1200&h=800&fit=crop"
+        ],
         estado: "",
         fecha: "Hace 4 días",
-        descripcion: "Moderno apartamento en zona exclusiva de Laureles. Cerca de restaurantes y parques.",
+        descripcion: "Moderno apartamento en zona exclusiva de Laureles. Cerca de restaurantes y parques. Perfecto para parejas jóvenes.",
         agente: "Ana María Jiménez",
         telefono: "+57 319 678 9012",
         email: "ana@propiedades.com"
@@ -333,49 +372,9 @@ function cargarMas() {
     }, 800);
 }
 
-// Ver detalle de propiedad
+// Ver detalle de propiedad - Navegar a página individual
 function verDetalle(id) {
-    const prop = propiedadesDB.find(p => p.id === id);
-    const esFavorito = favoritos.includes(prop.id);
-    
-    const modalContent = document.getElementById('modalContent');
-    modalContent.innerHTML = `
-        <div class="property-detail">
-            <div class="detail-image">
-                <img src="${prop.imagen}" alt="${prop.titulo}">
-                ${prop.estado ? `<span class="property-badge badge-${prop.estado}">${prop.estado === 'nueva' ? 'Nueva' : 'Destacada'}</span>` : ''}
-            </div>
-            <div class="detail-info">
-                <h2>${prop.titulo}</h2>
-                <div class="detail-price">${formatPrecioCOP(prop.precio)}</div>
-                <div class="detail-address">📍 ${prop.direccion}</div>
-                <div class="detail-features">
-                    <span>🛏️ ${prop.habitaciones} Habitaciones</span>
-                    <span>🚿 ${prop.banos} Baños</span>
-                    <span>📐 ${prop.metros} m²</span>
-                </div>
-                <div class="detail-description">
-                    <h4>Descripción</h4>
-                    <p>${prop.descripcion}</p>
-                </div>
-                <div class="detail-agent">
-                    <h4>Agente de contacto</h4>
-                    <p><strong>${prop.agente}</strong></p>
-                    <p>📞 ${prop.telefono}</p>
-                    <p>✉️ ${prop.email}</p>
-                </div>
-                <div class="detail-actions">
-                    <button class="btn btn-primary btn-large" onclick="contactarAgente(${prop.id})">Contactar agente</button>
-                    <button class="btn btn-outline" onclick="toggleFavorito(${prop.id}); cerrarModal(); mostrarToast('${esFavorito ? 'Eliminado de favoritos' : 'Agregado a favoritos'}', '${esFavorito ? 'info' : 'success'}')">
-                        ${esFavorito ? '❤️ Quitar de favoritos' : '🤍 Agregar a favoritos'}
-                    </button>
-                </div>
-            </div>
-        </div>
-    `;
-    
-    document.getElementById('modalOverlay').classList.add('active');
-    document.body.style.overflow = 'hidden';
+    window.location.href = `propiedad.html?id=${id}`;
 }
 
 // Contactar agente

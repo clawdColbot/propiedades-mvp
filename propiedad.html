@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propiedad - Detalle</title>
+    <link rel="stylesheet" href="styles.css?v=4">
+    <link rel="stylesheet" href="property-styles.css?v=1">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="nav-brand">
+                <svg class="logo" viewBox="0 0 40 40" fill="none">
+                    <rect width="40" height="40" rx="8" fill="#006AFF"/>
+                    <path d="M20 10L28 16V28H22V22H18V28H12V16L20 10Z" fill="white"/>
+                </svg>
+                <span class="brand-name">Propiedades</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Comprar</a>
+                <a href="index.html#propiedades" class="nav-link">Propiedades</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="btn btn-ghost" onclick="history.back()">← Volver</button>
+                <button class="btn btn-primary" onclick="mostrarPublicar()">Publicar propiedad</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Property Detail -->
+    <main class="property-detail-page" id="propertyDetail">
+        <!-- Content loaded dynamically -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-brand">
+                        <svg class="logo" viewBox="0 0 40 40" fill="none">
+                            <rect width="40" height="40" rx="8" fill="#006AFF"/>
+                            <path d="M20 10L28 16V28H22V22H18V28H12V16L20 10Z" fill="white"/>
+                        </svg>
+                        <span class="brand-name">Propiedades</span>
+                    </a>
+                    <p class="footer-description">La forma más fácil de encontrar y vender propiedades en Medellín.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Comprar</h4>
+                    <a href="index.html">Casas en venta</a>
+                    <a href="index.html">Apartamentos</a>
+                    <a href="index.html">Nuevas construcciones</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Vender</h4>
+                    <a href="#" onclick="mostrarPublicar(); return false;">Publicar propiedad</a>
+                    <a href="#" onclick="mostrarProximamente(event)">Agentes</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Contacto</h4>
+                    <a href="#" onclick="mostrarProximamente(event)">Ayuda</a>
+                    <a href="#" onclick="mostrarProximamente(event)">Sobre nosotros</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Propiedades Medellín. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for publish -->
+    <div class="modal-overlay" id="modalOverlay" onclick="cerrarModal(event)">
+        <div class="modal" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="cerrarModal()">&times;</button>
+            <div class="modal-content" id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="property.js?v=1"></script>
+</body>
+</html>
